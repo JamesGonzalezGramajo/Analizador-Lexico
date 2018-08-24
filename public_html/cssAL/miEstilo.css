@@ -1,0 +1,57 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+   
+    Author     : james
+*/
+
+
+/*ID*/
+#tiuloPrincipal {
+    margin-left: 25em;
+}
+
+#jamesGonzalez{
+    margin-left: 56.5em;
+}
+
+#abrirArchivo {
+    margin-left: 5em;
+}
+
+#guardarCambios{
+    margin-left: 37em;
+}
+
+#botonBuscarPalabra{
+    margin-left: 3em;
+}
+
+#inputPalabraBuscar{
+    margin-left: 2m;
+
+}
+
+#primerTextArea{
+    margin-left: 5em;
+}
+
+#segundoTextArea{
+    margin-left: 3em;
+    
+}
+
+#opcionDescargar{
+    margin-left: 54.5em;
+}
+/*TAGS*/
+textArea{
+    height: 50em;
+    width: 65em; 
+    resize: none;
+}
+
+

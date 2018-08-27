@@ -1,8 +1,13 @@
+
+// se define el objeto "error" y representa a una palabra no valida para el analizado
 function error(lexema, fila, columna) {
     this.lexema = lexema;
     this.fila = fila;
     this.columna = columna;
 }
+
+
+// se define el objeto "valido" y representa a una palabra valida para el analizador
 function valido(token, lexema, fila, columna) {
     this.token = token;
     this.lexema = lexema;
@@ -10,23 +15,22 @@ function valido(token, lexema, fila, columna) {
     this.columna = columna;
 }
 
-
+// Separa en lineas el parrafo de texto contenido en el primer textArea, devolviendo un listado que contiene todas las lineas del texto
 function separarEnLineas() {
     var texto = document.getElementById("primerTextArea").value;
     var listaLineas = texto.split("\n");
     return listaLineas;
 }
 
+
+// Separa una linea de texto en las palabras que la contienen, asi retornando un listado de palabras de una linea
 function separarEnPalabras(linea) {
     var listaPalabras = linea.split(" ");
     return listaPalabras;
 }
 
 
-
-
-
-
+// Evalua palabra por palabra para verificar que la palabra sea valida para el alfabeto
 function analizar(listaPalabras) {
 
     //for (var i = 0; i < listaPalabras.length; i++) {
@@ -177,7 +181,7 @@ function analizar(listaPalabras) {
 
 }
 
-
+// Asigna si una palabra es valida o no
 function colocarEstadoDeValidacion(estado, listadoPalabras, i) {
     if (estado === "ok") {
         var texto2 = document.getElementById("segundoTextArea").value;
@@ -190,16 +194,8 @@ function colocarEstadoDeValidacion(estado, listadoPalabras, i) {
 
 }
 
-
-function alerta() {
-    var resultado = document.getElementById("primerTextArea").getAttribute();
-    alert(resultado);
-}
-
+// junta los metodos de separarEnLineas(), separarEnPalabras() y analizar() y los hace trabajar
 function procesar() {
-    
-    
-
     var listaVAlidos = [];
 
     var listadoLineas = separarEnLineas();// Separa el parrafo en los saltos de linea para dejar lineas de texto
@@ -236,6 +232,7 @@ function procesar() {
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
+// junta los metodos de separarEnLineas(), separarEnPalabras() y analizar() y los hace trabajar para evaluar las palabras no validas
 function procesarParaErrores() {
 
     var listaErrores = [];
@@ -266,7 +263,7 @@ function procesarParaErrores() {
 
 
 
-
+// elabora la tabla que muestra los tokens no validos
 function elaborarTablaErrores(listaErrores) {
     document.write("<table>");
 
@@ -289,6 +286,8 @@ function elaborarTablaErrores(listaErrores) {
     document.write("</table>");
 }
 
+
+//muestra la tabla con las palabras no validas
 function mostrarTablaErrores() {
     var listaErrores = procesarParaErrores();
     elaborarTablaErrores(listaErrores);
@@ -299,6 +298,8 @@ function mostrarTablaErrores() {
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
+
+// junta los metodos de separarEnLineas(), separarEnPalabras() y analizar() y los hace trabajar para evaluar las palabras validas
 function procesarParaValidos() {
 
     var listaValidos = [];
@@ -350,7 +351,7 @@ function procesarParaValidos() {
     return listaValidos;
 }
 
-
+// elabora la tabla que muestra los tokens validos
 function elaborarTablaValidos(listaValidos) {
 
   
@@ -373,7 +374,7 @@ function elaborarTablaValidos(listaValidos) {
 
 }
 
-
+//muestra la tabla con las palabras validas
 function mostrarTablaValidos() {
     var listaValidaciones = procesarParaValidos();
     elaborarTablaValidos(listaValidaciones);

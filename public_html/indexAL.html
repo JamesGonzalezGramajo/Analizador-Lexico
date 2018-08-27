@@ -9,6 +9,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <script type="text/javascript" src="js/cargaYDescargaArchivos.js"></script>
         <script type="text/javascript" src="js/buscarPalabra.js"></script>
+        <script type="text/javascript" src="js/analizador.js"></script>
         <link rel="stylesheet" href="cssAL/miEstilo.css">
 
     </head>
@@ -21,7 +22,7 @@
 
         <section id="kitBuscar">
             <input type="file" id="abrirArchivo"/>
-            <button type="button" id="guardarCambios">Guardar Cambios</button>
+            <button type="button" id="analizar" onclick="procesar()">Analizar</button>
             <button class="kitBusquedaPalabra" id="botonBuscarPalabra" onclick="buscarPalabra()">Buscar</button>
             <input type="text" class="kitBusquedaPalabra" id="inputPalabraBuscar" placeholder="Escribe la palabra a buscar"/>    
 
@@ -38,6 +39,11 @@
 
 
         <br> <br>
+        
+        <section id="resultados">
+            <button type="button" id="botonErrores" onclick="mostrarTablaErrores()">Mostrar Errores</button>
+            <button type="button" id="botonValidos" onclick="mostrarTablaValidos()">Mostrar Validos</button>
+        </section>
 
 
 
@@ -67,5 +73,6 @@
         </footer>
         <script type="text/javascript" src="js/cargaYDescargaArchivos.js"></script>
         <script type="text/javascript" src="js/buscarPalabra.js"></script>
+         <script type="text/javascript" src="js/analizador.js"></script>
     </body>
 </html>
